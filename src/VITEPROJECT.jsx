@@ -1,5 +1,6 @@
 
 import { useState } from 'react'
+import{Item,Container,TodoList,Input,Button,UL} from './app.js'
 
 
 
@@ -22,15 +23,16 @@ function VITEPROJECT() {
 
 
     return (
-        <div>
-            <input placeholder="Digite sua Tarefa" onChange={inputChange} />
+        <Container>
+            <TodoList>
+            <Input placeholder="Digite sua Tarefa" onChange={inputChange} />
 
-            <button onClick={buttonClick}>Adicionar Tarefa</button>
+            <Button onClick={buttonClick}>Adicionar Tarefa</Button>
 
-            <ul>
+            <UL>
                 {
                     tasks.map((item, index) => (
-                        <li key={index}>{item}</li>
+                        <Item key={index}>{item}</Item>
                     ))
 
                 }
@@ -38,13 +40,15 @@ function VITEPROJECT() {
 
 
 
-            </ul>
-        </div>
+            </UL>
+            </TodoList>
+        </Container>
+        
 
     )
 }
 
-
+export default VITEPROJECT
 
 
 
